@@ -1,0 +1,117 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyNOqR1Wk/9L7wPMLx++d5jw",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/AnnetteM-wangi/Python-codes/blob/main/Creating%20my%20AI%20twin\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 1,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Itghit9QKddI",
+        "outputId": "f0aa88b5-bca6-4df9-ea6c-dc346b50d9cf"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Libraries loaded successfully!\n"
+          ]
+        }
+      ],
+      "source": [
+        "import numpy as np\n",
+        "import matplotlib.pyplot as plt\n",
+        "from collections import Counter\n",
+        "import pandas as pd\n",
+        "\n",
+        "np.random.seed(42)\n",
+        "\n",
+        "print(\"Libraries loaded successfully!\")"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "from collections import Counter\n",
+        "import matplotlib.pyplot as plt\n",
+        "\n",
+        "historical_activities=[1,2,3,1,1,1,2]\n",
+        "\n",
+        "def calculate_probability(sequence):\n",
+        "  counts= Counter(sequence)\n",
+        "  total=len(sequence)\n",
+        "  probabilities={\n",
+        "      activity:count/total\n",
+        "      for activity, count in counts.items()\n",
+        "  }\n",
+        "  return probabilities\n",
+        "\n",
+        "probs=calculate_probability(historical_activities)\n",
+        "\n",
+        "activity_names={\n",
+        "    1:\"work\",2:\"sleep\",3:\"eat\"\n",
+        "}\n",
+        "for activity, prob in sorted(probs.items()):\n",
+        "  print(f'{activity_names[activity]}:{prob:.2%}')"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "TKjcaqssNiR-",
+        "outputId": "8a2e67e6-feb2-4724-d6ce-2d5cf1291dab"
+      },
+      "execution_count": 4,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "work:57.14%\n",
+            "sleep:28.57%\n",
+            "eat:14.29%\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def calculate_conditional_probability(sequence):\n",
+        "  for i in range(len(sequence)-1):"
+      ],
+      "metadata": {
+        "id": "pp8lX1fWiB3l"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
