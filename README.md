@@ -1,2 +1,2 @@
-# Python-codes
-Learning python
+# Learning Python :)
+Days of learning python
