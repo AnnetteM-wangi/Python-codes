@@ -1,2 +1,2 @@
 # Python-codes
-Python practice code
+Learning python
